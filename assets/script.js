@@ -1,14 +1,33 @@
 const navLinks = document.querySelectorAll(".nav a");
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
 
+
+// Menu active
 navLinks.forEach(link => {
+
     link.addEventListener("click", function () {
 
-        // Remove active de todos os links
         navLinks.forEach(item => {
             item.classList.remove("active");
         });
 
-        // Adiciona active ao link clicado
         this.classList.add("active");
+
+
+        // Fecha o menu mobile
+        nav.classList.remove("open");
+        menuToggle.classList.remove("active");
+
     });
+
+});
+
+
+// Abre e fecha menu mobile
+menuToggle.addEventListener("click", () => {
+
+    nav.classList.toggle("open");
+    menuToggle.classList.toggle("active");
+
 });
