@@ -1,7 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Colors */
+    --color-primary: #0B295B;
+    --color-accent: #1678FF;
+    --color-secondary: #596B45;
+    --color-dark: #252A30;
+
+    --color-white: #FFFFFF;
+    --color-background: #F8F8F6;
+    --color-header: rgba(255, 255, 255, 0.95);
+    --color-border: #E8E8E8;
+
+    /* Typography */
+    --font-primary: 'Manrope', sans-serif;
+}
+
+
+/* Basic reset */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+
+/* General */
 
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-primary);
+    color: var(--color-dark);
+    background-color: var(--color-background);
 }
 
 /* =========================
@@ -10,8 +52,8 @@ body {
 
 .header {
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #eeeeee;
+    background: var(--color-header);
+    border-bottom: 1px solid var(--color-border);
 
     position: sticky;
     top: 0;
@@ -55,7 +97,7 @@ body {
 }
 
 .nav a {
-    color: #252a30;
+    color: var(--color-primary);
     text-decoration: none;
     font-size: 15px;
     font-weight: 700;
@@ -65,7 +107,7 @@ body {
 
 .nav a:hover,
 .nav a.active {
-    color: #1678ff;
+    color: var(--color-accent);
 }
 
 /* Contact Button */
@@ -73,10 +115,10 @@ body {
 .contact-button {
     padding: 14px 24px;
 
-    border: 2px solid #1678ff;
+    border: 2px solid var(--color-accent);
     border-radius: 6px;
 
-    color: #1678ff;
+    color: var(--color-accent);
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -85,8 +127,8 @@ body {
 }
 
 .contact-button:hover {
-    background: #1678ff;
-    color: #ffffff;
+    background: var(--color-accent);
+    color: var(--color-white);
 }
 
 /* Mobile menu */
@@ -112,7 +154,7 @@ body {
     width: 26px;
     height: 2px;
 
-    background: #252a30;
+    background: var(--color-dark);
     border-radius: 2px;
 
     transform: translateX(-50%);
@@ -153,21 +195,20 @@ body {
     border: none;
     background: transparent;
 
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 700;
 
-    color: #252a30;
+    color: var(--color-primary);
 
     cursor: pointer;
-
     border-radius: 6px;
 
     transition: background 0.2s ease;
 }
 
 .language-button:hover {
-    background: #f5f5f5;
+    background: var(--color-background);
 }
 
 #language-flag {
@@ -186,12 +227,14 @@ body {
 
     padding: 6px;
 
-    background: #ffffff;
+    background: var(--color-white);
 
-    border: 1px solid #eeeeee;
+    color: var(--color-primary);
+
+    border: 1px solid var(--color-border);
     border-radius: 8px;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 25px var(--color-dark);
 
     opacity: 0;
     visibility: hidden;
@@ -229,9 +272,11 @@ body {
 
     background: transparent;
 
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 700;
+
+    color: var(--color-primary);
 
     cursor: pointer;
 
@@ -239,7 +284,7 @@ body {
 }
 
 .language-menu button:hover {
-    background: #f5f5f5;
+    background: var(--color-background);
 }
 
 #language-flag,
@@ -292,10 +337,10 @@ body {
 
         margin: 0;
 
-        background: #ffffff;
+        background: var(--color-white);
 
-        border-top: 1px solid #eeeeee;
-        border-bottom: 1px solid #eeeeee;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
 
         opacity: 0;
         visibility: hidden;
@@ -310,7 +355,7 @@ body {
 
         text-align: center;
 
-        border-bottom: 1px solid #f2f2f2;
+        border-bottom: 1px solid var(--color-border);
     }
 
     .nav.open {

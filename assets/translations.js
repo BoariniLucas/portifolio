@@ -44,6 +44,19 @@ languageButton.addEventListener("click", () => {
     languageMenu.classList.toggle("open");
 });
 
+// Fecha o dropdown ao clicar fora
+document.addEventListener("click", (event) => {
+
+    const clickedOutside =
+        !languageButton.contains(event.target) &&
+        !languageMenu.contains(event.target);
+
+    if (clickedOutside) {
+        languageMenu.classList.remove("open");
+    }
+
+});
+
 
 // Seleciona idioma
 document.querySelectorAll("[data-lang]").forEach(button => {
