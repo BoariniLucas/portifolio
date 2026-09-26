@@ -24,7 +24,34 @@ const translations = {
         "hero.contact": "Vamos conversar",
 
         "hero.cardTitle": "Feito sob medida",
-        "hero.cardDescription": "Soluções pensadas para o seu negócio"
+        "hero.cardDescription": "Soluções pensadas para o seu negócio",
+
+        //Solutions
+        solutionsLabel: "COMO POSSO APOIAR",
+
+        solutionsTitleMain: "Soluções digitais para tornar",
+
+        solutionsTitleHighlight: "seu negócio mais eficiente.",
+
+        solutionsDescription:
+            "Tecnologia prática para pequenos negócios que querem economizar tempo, organizar processos e trabalhar de forma mais eficiente.",
+
+        solutionWebTitle: "Sites profissionais",
+
+        solutionWebDescription:
+            "Sites modernos, responsivos e pensados para apresentar seu negócio de forma profissional e transformar visitantes em clientes.",
+
+        solutionDashboardTitle: "Dashboards & Gestão",
+
+        solutionDashboardDescription:
+            "Organize informações importantes do seu negócio e transforme dados em uma visão clara para acompanhar resultados e tomar decisões.",
+
+        solutionAutomationTitle: "Automações",
+
+        solutionAutomationDescription:
+            "Simplifique tarefas repetitivas e conecte seus processos para economizar tempo e reduzir trabalho manual.",
+
+        viewProjects: "Ver projetos",
     },
 
     en: {
@@ -51,7 +78,34 @@ const translations = {
         "hero.contact": "Let's talk",
 
         "hero.cardTitle": "Tailored solutions",
-        "hero.cardDescription": "Designed around your business"
+        "hero.cardDescription": "Designed around your business",
+
+        //Solutions
+        solutionsLabel: "HOW I CAN HELP",
+
+        solutionsTitleMain: "Digital solutions to simplify",
+
+        solutionsTitleHighlight: "your business",
+
+        solutionsDescription:
+            "Practical technology for small businesses looking to save time, streamline processes and work more efficiently.",
+
+        solutionWebTitle: "Professional Websites",
+
+        solutionWebDescription:
+            "Modern, responsive websites designed to present your business professionally and turn visitors into customers.",
+
+        solutionDashboardTitle: "Dashboards & Management",
+
+        solutionDashboardDescription:
+            "Organise important business information and turn your data into clear insights to track results and make better decisions.",
+
+        solutionAutomationTitle: "Automation",
+
+        solutionAutomationDescription:
+            "Simplify repetitive tasks and connect your processes to save time and reduce manual work.",
+
+        viewProjects: "View projects",
     }
 
 };
