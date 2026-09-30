@@ -52,6 +52,40 @@ const translations = {
             "Simplifique tarefas repetitivas e conecte seus processos para economizar tempo e reduzir trabalho manual.",
 
         viewProjects: "Ver projetos",
+
+        //Projects
+        projectsLabel: "PROJETOS",
+        projectsTitleMain: "Soluções que já",
+        projectsTitleHighlight: "coloquei em prática.",
+        projectsDescription:
+            "Projetos desenvolvidos para resolver problemas reais através de tecnologia, organização e automação.",
+
+        financeFeatured: "PROJETO EM DESTAQUE",
+        financeTitle: "Controle Financeiro",
+        financeCategory: "Dashboard & Automação",
+
+        financeDescription:
+            "Sistema desenvolvido para centralizar e organizar informações financeiras, acompanhar o patrimônio e facilitar os lançamentos do dia a dia.",
+
+        financeFeature1: "Dashboard financeiro interativo",
+        financeFeature2: "Lançamentos rápidos pelo celular",
+        financeFeature3: "Controle financeiro Real e Euro",
+        financeFeature4: "Investimentos e patrimônio",
+        financeFeature5: "Automações com Apps Script",
+
+        deliveryCategory: "WEB APP",
+        deliveryTitle: "Delivery Calculator",
+
+        deliveryDescription:
+            "Calculadora desenvolvida para ajudar entregadores a estimar ganhos líquidos considerando taxas e custos relacionados às entregas.",
+        
+        websiteCategory: "WEBSITE",
+        websiteTitle: "Website profissional",
+
+        websiteDescription:
+            "Website responsivo desenvolvido para apresentar serviços de forma profissional e facilitar o contato entre o negócio e seus clientes.",
+
+        viewProject: "Ver projeto",
     },
 
     en: {
@@ -106,6 +140,40 @@ const translations = {
             "Simplify repetitive tasks and connect your processes to save time and reduce manual work.",
 
         viewProjects: "View projects",
+
+        //Projects
+        projectsLabel: "PROJECTS",
+        projectsTitleMain: "Solutions I've",
+        projectsTitleHighlight: "brought to life.",
+        projectsDescription:
+            "Projects developed to solve real problems through technology, organisation and automation.",
+
+        financeFeatured: "FEATURED PROJECT",
+        financeTitle: "Financial Management",
+        financeCategory: "Dashboard & Automation",
+
+        financeDescription:
+            "A system developed to centralise and organise financial information, track net worth and simplify everyday financial entries.",
+
+        financeFeature1: "Interactive financial dashboard",
+        financeFeature2: "Quick mobile entries",
+        financeFeature3: "Financial management across Real and Euro",
+        financeFeature4: "Investment and net worth tracking",
+        financeFeature5: "Automation with Apps Script",
+
+        deliveryCategory: "WEB APP",
+        deliveryTitle: "Delivery Calculator",
+
+        deliveryDescription:
+            "A calculator designed to help delivery riders estimate their net earnings by considering fees and delivery-related costs.",
+        
+        websiteCategory: "WEBSITE",
+        websiteTitle: "Professional Website",
+
+        websiteDescription:
+            "A responsive website designed to showcase services professionally and make it easier for businesses to connect with their customers.",
+
+        viewProject: "View project",
     }
 
 };
