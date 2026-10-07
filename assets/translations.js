@@ -86,6 +86,20 @@ const translations = {
             "Website responsivo desenvolvido para apresentar serviços de forma profissional e facilitar o contato entre o negócio e seus clientes.",
 
         viewProject: "Ver projeto",
+
+        // About
+        aboutLabel: "SOBRE MIM",
+        aboutTitleMain: "Negócios, tecnologia e soluções que",
+        aboutTitleHighlight: "fazem sentido na prática.",
+        aboutParagraph1: "Minha trajetória profissional combina duas áreas que sempre fizeram parte da minha experiência: negócios e tecnologia. Tenho mais de 10 anos de experiência trabalhando diretamente com clientes, vendas e necessidades reais de negócios, e sou formado em Análise e Desenvolvimento de Sistemas desde 2018.",
+        aboutParagraph2: "Desde então, venho desenvolvendo projetos pessoais e explorando desenvolvimento web, dados e automação como ferramentas para transformar problemas do dia a dia em soluções mais simples e eficientes.",
+        aboutParagraph3: "Hoje, uno essa experiência prática de negócios à minha formação em tecnologia para desenvolver websites, dashboards e automações pensados não apenas para funcionar, mas para resolver necessidades reais de quem os utiliza.",
+        aboutHighlight1Title: "10+ anos",
+        aboutHighlight1Description: "Experiência com clientes e negócios",
+        aboutHighlight2Title: "Desde 2018",
+        aboutHighlight2Description: "Formação e projetos em tecnologia ",
+        aboutHighlight3Title: "Tech + Business",
+        aboutHighlight3Description: "Tecnologia com visão de negócio",
     },
 
     en: {
@@ -174,6 +188,20 @@ const translations = {
             "A responsive website designed to showcase services professionally and make it easier for businesses to connect with their customers.",
 
         viewProject: "View project",
+
+        // About
+        aboutLabel: "ABOUT ME",
+        aboutTitleMain: "Business, technology and solutions that",
+        aboutTitleHighlight: "make a real difference.",
+        aboutParagraph1: "My professional background brings together business and technology. I have over 10 years of experience working directly with customers, sales and real business needs, and I graduated in Systems Analysis and Development in 2018.",
+        aboutParagraph2: "Since then, I have been building personal projects and exploring web development, data and automation to turn everyday challenges into simpler, more efficient solutions.",
+        aboutParagraph3: "Today, I combine hands-on business experience with my technical background to build websites, dashboards and automations that address the real needs of the people who use them.",
+        aboutHighlight1Title: "10+ years",
+        aboutHighlight1Description: "Experience with customers and businesses",
+        aboutHighlight2Title: "Since 2018",
+        aboutHighlight2Description: "Technical education and projects",
+        aboutHighlight3Title: "Tech + Business",
+        aboutHighlight3Description: "Technology with a business perspective",
     }
 
 };
@@ -184,7 +212,18 @@ function changeLanguage(language) {
 
         const key = element.getAttribute("data-i18n");
 
-        element.textContent = translations[language][key];
+        if (element.hasAttribute("data-i18n-text")) {
+            // Traduz o texto inicial sem substituir o destaque interno do título.
+            const textNode = Array.from(element.childNodes).find(node =>
+                node.nodeType === Node.TEXT_NODE && node.textContent.trim()
+            );
+
+            if (textNode) {
+                textNode.textContent = translations[language][key] + " ";
+            }
+        } else {
+            element.textContent = translations[language][key];
+        }
 
     });
 
