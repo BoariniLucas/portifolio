@@ -100,6 +100,17 @@ const translations = {
         aboutHighlight2Description: "Formação e projetos em tecnologia ",
         aboutHighlight3Title: "Tech + Business",
         aboutHighlight3Description: "Tecnologia com visão de negócio",
+
+        // Technologies
+        technologiesLabel: "TECNOLOGIAS & FERRAMENTAS",
+        technologiesTitle: "Tecnologias & Ferramentas",
+        technologiesDescription: "Ferramentas que utilizo para transformar ideias em soluções digitais.",
+        technologiesWebTitle: "Desenvolvimento Web",
+        technologiesWebDescription: "Tecnologias utilizadas para criar sites e interfaces modernas.",
+        technologiesDataTitle: "Automação & Dados",
+        technologiesDataDescription: "Ferramentas para automatizar processos e organizar informações.",
+        technologiesDevelopmentTitle: "Ferramentas de Desenvolvimento",
+        technologiesDevelopmentDescription: "Ferramentas utilizadas no desenvolvimento e na organização dos projetos.",
     },
 
     en: {
@@ -202,6 +213,17 @@ const translations = {
         aboutHighlight2Description: "Technical education and projects",
         aboutHighlight3Title: "Tech + Business",
         aboutHighlight3Description: "Technology with a business perspective",
+
+        // Technologies
+        technologiesLabel: "TECHNOLOGIES & TOOLS",
+        technologiesTitle: "Technologies & Tools",
+        technologiesDescription: "Tools I use to turn ideas into digital solutions.",
+        technologiesWebTitle: "Web Development",
+        technologiesWebDescription: "Technologies for building modern websites and interfaces.",
+        technologiesDataTitle: "Automation & Data",
+        technologiesDataDescription: "Tools for automating workflows and organising information.",
+        technologiesDevelopmentTitle: "Development Tools",
+        technologiesDevelopmentDescription: "Tools I use to develop and organise my projects.",
     }
 
 };
