@@ -31,3 +31,39 @@ menuToggle.addEventListener("click", () => {
     menuToggle.classList.toggle("active");
 
 });
+
+// CONTACT CONFIGURATION — Lucas: preencha estes dois campos para ativar os links.
+const contactConfig = {
+    whatsappNumber: "", // PREENCHER: número com código do país, somente dígitos.
+    email: "" // PREENCHER: endereço de e-mail profissional.
+};
+
+function updateContactLinks(language) {
+    const whatsappNumber = contactConfig.whatsappNumber.trim();
+    const email = contactConfig.email.trim();
+    const message = translations[language].contactWhatsAppMessage;
+    const links = {
+        whatsapp: /^\d{7,15}$/.test(whatsappNumber)
+            ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+            : "",
+        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+            ? `mailto:${email}`
+            : ""
+    };
+
+    document.querySelectorAll("[data-contact]").forEach(link => {
+        const href = links[link.dataset.contact];
+
+        if (href) {
+            link.href = href;
+            link.removeAttribute("aria-disabled");
+            link.removeAttribute("tabindex");
+        } else {
+            link.removeAttribute("href");
+            link.setAttribute("aria-disabled", "true");
+            link.setAttribute("tabindex", "-1");
+        }
+    });
+}
+
+updateContactLinks(document.documentElement.lang.startsWith("pt") ? "pt" : "en");

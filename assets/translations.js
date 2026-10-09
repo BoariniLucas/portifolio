@@ -6,6 +6,7 @@ const translations = {
         "nav.solutions": "Soluções",
         "nav.projects": "Projetos",
         "nav.about": "Sobre",
+        "nav.technologies": "Tecnologias",
         "nav.contact": "Vamos conversar",
 
         // Hero
@@ -111,6 +112,23 @@ const translations = {
         technologiesDataDescription: "Ferramentas para automatizar processos e organizar informações.",
         technologiesDevelopmentTitle: "Ferramentas de Desenvolvimento",
         technologiesDevelopmentDescription: "Ferramentas utilizadas no desenvolvimento e na organização dos projetos.",
+
+        // Contact
+        contactLabel: "CONTATO",
+        contactTitle: "Vamos conversar?",
+        contactSubtitle: "Tem um projeto em mente?",
+        contactDescription: "Se você precisa de um website, quer automatizar processos ou organizar melhor as informações do seu negócio, vamos conversar sobre como posso ajudar.",
+        contactWhatsApp: "WhatsApp",
+        contactWhatsAppDescription: "Converse diretamente comigo.",
+        contactEmail: "E-mail",
+        contactEmailDescription: "Envie sua mensagem.",
+        contactLocation: "Dublin, Irlanda",
+        contactLocationDescription: "Atendimento remoto para Irlanda, Brasil e outros países.",
+        contactImageAlt: "Ambiente de trabalho com notebook, caderno e uma caneca sobre a mesa.",
+        contactCtaTitle: "Prefere conversar primeiro sobre sua ideia?",
+        contactCtaDescription: "Me conte um pouco do que você precisa. Será um prazer entender seu projeto.",
+        contactCtaButton: "Vamos conversar",
+        contactWhatsAppMessage: "Olá, Lucas! Conheci seu portfólio e gostaria de conversar sobre um projeto.",
     },
 
     en: {
@@ -119,6 +137,7 @@ const translations = {
         "nav.solutions": "Solutions",
         "nav.projects": "Projects",
         "nav.about": "About",
+        "nav.technologies": "Technologies",
         "nav.contact": "Let's talk",
 
         // Hero
@@ -224,6 +243,23 @@ const translations = {
         technologiesDataDescription: "Tools for automating workflows and organising information.",
         technologiesDevelopmentTitle: "Development Tools",
         technologiesDevelopmentDescription: "Tools I use to develop and organise my projects.",
+
+        // Contact
+        contactLabel: "CONTACT",
+        contactTitle: "Let’s talk!",
+        contactSubtitle: "Have a project in mind?",
+        contactDescription: "Whether you need a website, want to automate processes or organise your business information, let’s talk about how I can help.",
+        contactWhatsApp: "WhatsApp",
+        contactWhatsAppDescription: "Chat with me directly.",
+        contactEmail: "Email",
+        contactEmailDescription: "Send me a message.",
+        contactLocation: "Dublin, Ireland",
+        contactLocationDescription: "Working remotely with clients in Ireland, Brazil and beyond.",
+        contactImageAlt: "Workspace with a laptop, notebook and mug on a desk.",
+        contactCtaTitle: "Would you like to talk through your idea first?",
+        contactCtaDescription: "Tell me a little about what you need. I’d be happy to learn more about your project.",
+        contactCtaButton: "Let’s talk",
+        contactWhatsAppMessage: "Hi Lucas! I came across your portfolio and would like to discuss a project.",
     }
 
 };
@@ -248,6 +284,14 @@ function changeLanguage(language) {
         }
 
     });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach(element => {
+        element.alt = translations[language][element.dataset.i18nAlt];
+    });
+
+    if (typeof updateContactLinks === "function") {
+        updateContactLinks(language);
+    }
 
     document.documentElement.lang = 
         language === "pt" ? "pt-BR" : "en-IE";
