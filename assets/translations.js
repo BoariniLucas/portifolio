@@ -29,6 +29,9 @@ const translations = {
 
         //Solutions
         solutionsLabel: "COMO POSSO APOIAR",
+        solutionsGoToWeb: "Ver solução: Sites profissionais",
+        solutionsGoToDashboard: "Ver solução: Dashboards & Gestão",
+        solutionsGoToAutomation: "Ver solução: Automações",
 
         solutionsTitleMain: "Soluções digitais para tornar",
 
@@ -56,6 +59,8 @@ const translations = {
 
         //Projects
         projectsLabel: "PROJETOS",
+        projectsGoToDelivery: "Ver projeto: Delivery Calculator",
+        projectsGoToWebsite: "Ver projeto: Website profissional",
         projectsTitleMain: "Soluções que já",
         projectsTitleHighlight: "coloquei em prática.",
         projectsDescription:
@@ -168,6 +173,9 @@ const translations = {
 
         //Solutions
         solutionsLabel: "HOW I CAN HELP",
+        solutionsGoToWeb: "View solution: Professional Websites",
+        solutionsGoToDashboard: "View solution: Dashboards & Management",
+        solutionsGoToAutomation: "View solution: Automation",
 
         solutionsTitleMain: "Digital solutions to simplify",
 
@@ -195,6 +203,8 @@ const translations = {
 
         //Projects
         projectsLabel: "PROJECTS",
+        projectsGoToDelivery: "View project: Delivery Calculator",
+        projectsGoToWebsite: "View project: Professional Website",
         projectsTitleMain: "Solutions I've",
         projectsTitleHighlight: "brought to life.",
         projectsDescription:

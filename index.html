@@ -160,7 +160,7 @@
 
                     <div class="section-heading">
 
-                        <span class="section-label" data-i18n="solutionsLabel">
+                        <span class="section-label" id="solutions-label" data-i18n="solutionsLabel">
                             Como posso apoiar
                         </span>
 
@@ -189,10 +189,10 @@
                     </div>
 
 
-                    <div class="solutions-grid">
+                    <div class="solutions-grid mobile-carousel" data-mobile-carousel id="solutions-carousel" tabindex="0" aria-labelledby="solutions-label">
 
                         <!-- Website -->
-                        <article class="solution-card">
+                        <article class="solution-card" id="solution-web">
 
                             <span class="solution-number">01</span>
 
@@ -234,7 +234,7 @@
 
 
                         <!-- Dashboards -->
-                        <article class="solution-card">
+                        <article class="solution-card" id="solution-dashboard">
 
                             <span class="solution-number">02</span>
 
@@ -275,7 +275,7 @@
 
 
                         <!-- Automation -->
-                        <article class="solution-card">
+                        <article class="solution-card" id="solution-automation">
 
                             <span class="solution-number">03</span>
                             
@@ -316,6 +316,18 @@
 
                     </div>
 
+                    <div class="solutions-indicators carousel-indicators" data-carousel-controls="solutions-carousel" role="group" aria-labelledby="solutions-label">
+                        <button class="solutions-indicator carousel-indicator" type="button" aria-controls="solution-web" aria-current="true">
+                            <span class="solutions-indicator-label carousel-indicator-label" data-i18n="solutionsGoToWeb">Ver solução: Sites profissionais</span>
+                        </button>
+                        <button class="solutions-indicator carousel-indicator" type="button" aria-controls="solution-dashboard" aria-current="false">
+                            <span class="solutions-indicator-label carousel-indicator-label" data-i18n="solutionsGoToDashboard">Ver solução: Dashboards &amp; Gestão</span>
+                        </button>
+                        <button class="solutions-indicator carousel-indicator" type="button" aria-controls="solution-automation" aria-current="false">
+                            <span class="solutions-indicator-label carousel-indicator-label" data-i18n="solutionsGoToAutomation">Ver solução: Automações</span>
+                        </button>
+                    </div>
+
                 </div>
 
             </section>
@@ -326,7 +338,7 @@
 
                     <div class="projects-heading">
 
-                        <span class="section-label" data-i18n="projectsLabel">
+                        <span class="section-label" id="projects-label" data-i18n="projectsLabel">
                             PROJETOS
                         </span>
 
@@ -451,10 +463,10 @@
 
                         </article>
 
-                        <div class="projects-secondary-grid">
+                        <div class="projects-secondary-grid mobile-carousel" data-mobile-carousel id="projects-carousel" tabindex="0" aria-labelledby="projects-label">
 
                             <!-- PROJECT 02 -->
-                            <article class="project-card">
+                            <article class="project-card" id="project-delivery">
 
                                 <div class="project-card-visual project-card-visual-blue">
                                     <div class="project-mockup project-mockup--small">
@@ -540,7 +552,7 @@
 
 
                             <!-- PROJECT 03 -->
-                            <article class="project-card">
+                            <article class="project-card" id="project-website">
 
                                 <div class="project-card-visual project-card-visual-green">
                                     <div class="project-mockup project-mockup--small">
@@ -624,6 +636,14 @@
 
                             </article>
 
+                        </div>
+                        <div class="carousel-indicators" data-carousel-controls="projects-carousel" role="group" aria-labelledby="projects-label">
+                            <button class="carousel-indicator" type="button" aria-controls="project-delivery" aria-current="true">
+                                <span class="carousel-indicator-label" data-i18n="projectsGoToDelivery">Ver projeto: Delivery Calculator</span>
+                            </button>
+                            <button class="carousel-indicator" type="button" aria-controls="project-website" aria-current="false">
+                                <span class="carousel-indicator-label" data-i18n="projectsGoToWebsite">Ver projeto: Website profissional</span>
+                            </button>
                         </div>
                     </div>
                 </div>

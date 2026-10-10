@@ -724,6 +724,11 @@ body {
     gap: 24px;
 }
 
+/* Os controles só aparecem no carrossel mobile. */
+.carousel-indicators {
+    display: none;
+}
+
 .solution-card {
     position: relative;
 
@@ -2386,10 +2391,107 @@ body {
         margin: 0;
     }
 
-    .solutions-grid {
-        grid-template-columns: 1fr;
+    .solutions .section-heading {
+        text-align: center;
+    }
 
+    .solutions .section-heading p {
+        margin: 0 auto;
+    }
+
+    .mobile-carousel {
+        position: relative;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        align-items: stretch;
         gap: 16px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding: 8px 0 28px;
+    }
+
+    .mobile-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mobile-carousel > article {
+        min-width: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .mobile-carousel:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 4px;
+    }
+
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+        margin-top: 4px;
+    }
+
+    .carousel-indicator {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .carousel-indicator::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--color-border);
+        transition: background-color 0.2s ease;
+    }
+
+    .carousel-indicator[aria-current="true"]::before {
+        background: var(--color-accent);
+    }
+
+    .carousel-indicator:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: -4px;
+    }
+
+    .carousel-indicator-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .carousel-indicator::before,
+        .mobile-carousel > article,
+        .mobile-carousel .solution-link span,
+        .mobile-carousel .solution-link-icon,
+        .mobile-carousel .project-card-image,
+        .mobile-carousel .project-card-link img {
+            transition: none;
+        }
+
+        .mobile-carousel > article:hover,
+        .mobile-carousel .project-card:hover .project-card-image {
+            transform: none;
+        }
     }
 
     .solution-card {
@@ -2424,12 +2526,6 @@ body {
 
         right: 8px;
         bottom: -35px;
-    }
-
-    .projects-secondary-grid {
-        grid-template-columns: 1fr;
-
-        gap: 24px;
     }
 
     .project-card-visual {

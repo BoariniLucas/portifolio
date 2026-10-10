@@ -75,3 +75,81 @@ const copyrightYear = document.querySelector("#copyright-year");
 if (copyrightYear) {
     copyrightYear.textContent = new Date().getFullYear();
 }
+
+
+// Carrosséis mobile: cada grade controla apenas seus próprios cards e indicadores.
+document.querySelectorAll("[data-mobile-carousel]").forEach(carousel => {
+    const cards = Array.from(carousel.children);
+    const controls = document.querySelector(`[data-carousel-controls="${carousel.id}"]`);
+    const indicators = Array.from(controls.querySelectorAll(".carousel-indicator"));
+    const mobileCarousel = window.matchMedia("(max-width: 768px)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let scrollFrame = null;
+
+    function updateCarouselIndicator() {
+        const carouselLeft = carousel.getBoundingClientRect().left;
+        let activeIndex = 0;
+        let closestDistance = Infinity;
+
+        cards.forEach((card, index) => {
+            const distance = Math.abs(card.getBoundingClientRect().left - carouselLeft);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                activeIndex = index;
+            }
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.setAttribute("aria-current", String(index === activeIndex));
+        });
+    }
+
+    function goToCard(index) {
+        if (!mobileCarousel.matches) return;
+
+        carousel.scrollTo({
+            left: cards[index].offsetLeft - cards[0].offsetLeft,
+            behavior: reducedMotion.matches ? "instant" : "smooth"
+        });
+    }
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => goToCard(index));
+    });
+
+    carousel.addEventListener("scroll", () => {
+        if (scrollFrame !== null) return;
+        scrollFrame = window.requestAnimationFrame(() => {
+            updateCarouselIndicator();
+            scrollFrame = null;
+        });
+    }, { passive: true });
+
+    carousel.addEventListener("keydown", event => {
+        if (!mobileCarousel.matches || event.target !== carousel) return;
+        const currentIndex = indicators.findIndex(indicator =>
+            indicator.getAttribute("aria-current") === "true"
+        );
+        let nextIndex;
+        if (event.key === "ArrowRight") nextIndex = Math.min(currentIndex + 1, cards.length - 1);
+        if (event.key === "ArrowLeft") nextIndex = Math.max(currentIndex - 1, 0);
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = cards.length - 1;
+        if (nextIndex === undefined) return;
+        event.preventDefault();
+        goToCard(nextIndex);
+    });
+
+    function updateCarouselLayout() {
+        if (mobileCarousel.matches) {
+            carousel.setAttribute("tabindex", "0");
+        } else {
+            carousel.removeAttribute("tabindex");
+        }
+        updateCarouselIndicator();
+    }
+
+    new ResizeObserver(updateCarouselLayout).observe(carousel);
+    mobileCarousel.addEventListener("change", updateCarouselLayout);
+    updateCarouselLayout();
+});
