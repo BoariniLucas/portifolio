@@ -67,3 +67,11 @@ function updateContactLinks(language) {
 }
 
 updateContactLinks(document.documentElement.lang.startsWith("pt") ? "pt" : "en");
+
+
+// Ano do rodapé, separado do texto traduzido para preservar as trocas de idioma.
+const copyrightYear = document.querySelector("#copyright-year");
+
+if (copyrightYear) {
+    copyrightYear.textContent = new Date().getFullYear();
+}

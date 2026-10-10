@@ -129,6 +129,14 @@ const translations = {
         contactCtaDescription: "Me conte um pouco do que você precisa. Será um prazer entender seu projeto.",
         contactCtaButton: "Vamos conversar",
         contactWhatsAppMessage: "Olá, Lucas! Conheci seu portfólio e gostaria de conversar sobre um projeto.",
+
+        // Footer
+        footerDescription: "Desenvolvendo soluções digitais para pequenos negócios que querem crescer de forma simples e eficiente.",
+        footerLocationDescription: "Atendimento remoto para o Brasil e outros países.",
+        footerNavigation: "Navegação",
+        footerContact: "Contato",
+        footerRights: "Todos os direitos reservados.",
+        footerBackToTop: "Voltar ao topo",
     },
 
     en: {
@@ -260,6 +268,14 @@ const translations = {
         contactCtaDescription: "Tell me a little about what you need. I’d be happy to learn more about your project.",
         contactCtaButton: "Let’s talk",
         contactWhatsAppMessage: "Hi Lucas! I came across your portfolio and would like to discuss a project.",
+
+        // Footer
+        footerDescription: "Building digital solutions for small businesses that want to grow simply and efficiently.",
+        footerLocationDescription: "Working remotely with clients in Brazil and beyond.",
+        footerNavigation: "Navigation",
+        footerContact: "Contact",
+        footerRights: "All rights reserved.",
+        footerBackToTop: "Back to top",
     }
 
 };
