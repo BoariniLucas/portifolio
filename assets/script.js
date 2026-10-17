@@ -3,33 +3,53 @@ const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 
 
-// Menu active
+// O estado visual e o estado acessível do menu são atualizados juntos.
+function setNavigationOpen(open, returnFocus = false) {
+    nav.classList.toggle("open", open);
+    menuToggle.classList.toggle("active", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+
+    if (returnFocus) menuToggle.focus({ preventScroll: true });
+}
+
 navLinks.forEach(link => {
-
     link.addEventListener("click", function () {
-
-        navLinks.forEach(item => {
-            item.classList.remove("active");
-        });
-
+        navLinks.forEach(item => item.classList.remove("active"));
         this.classList.add("active");
+        const wasOpen = nav.classList.contains("open");
+        setNavigationOpen(false);
 
-
-        // Fecha o menu mobile
-        nav.classList.remove("open");
-        menuToggle.classList.remove("active");
-
+        if (wasOpen) {
+            // O destino recebe o foco sem impedir a navegação nativa pela âncora.
+            const target = document.querySelector(this.getAttribute("href"));
+            target.setAttribute("tabindex", "-1");
+            target.focus({ preventScroll: true });
+            target.addEventListener("blur", () => target.removeAttribute("tabindex"), { once: true });
+        }
     });
-
 });
 
-
-// Abre e fecha menu mobile
 menuToggle.addEventListener("click", () => {
+    const open = !nav.classList.contains("open");
+    setNavigationOpen(open);
+    if (open) navLinks[0].focus({ preventScroll: true });
+});
 
-    nav.classList.toggle("open");
-    menuToggle.classList.toggle("active");
+document.addEventListener("keydown", event => {
+    if (event.defaultPrevented || event.key !== "Escape" || !nav.classList.contains("open")) return;
+    event.preventDefault();
+    setNavigationOpen(false, true);
+});
 
+const compactNavigation = window.matchMedia("(max-width: 1100px)");
+compactNavigation.addEventListener("change", event => {
+    if (!event.matches) {
+        const toggleHadFocus = document.activeElement === menuToggle;
+        setNavigationOpen(false);
+        if (toggleHadFocus) navLinks[0].focus({ preventScroll: true });
+    } else if (nav.contains(document.activeElement)) {
+        menuToggle.focus({ preventScroll: true });
+    }
 });
 
 // CONTACT CONFIGURATION — Lucas: preencha estes dois campos para ativar os links.

@@ -4,6 +4,8 @@
     /* Colors */
     --color-primary: #0B295B;
     --color-accent: #1678FF;
+    --color-accent-accessible: #0969ED;
+    --color-indicator-inactive: #757B83;
     --color-secondary: #596B45;
     --color-dark: #252A30;
     --color-light-shadow: #252a305b;
@@ -113,7 +115,7 @@ body {
 
 .nav a:hover,
 .nav a.active {
-    color: var(--color-accent);
+    color: var(--color-accent-accessible);
 }
 
 /* Contact Button */
@@ -121,10 +123,10 @@ body {
 .contact-button {
     padding: 14px 24px;
 
-    border: 2px solid var(--color-accent);
+    border: 2px solid var(--color-accent-accessible);
     border-radius: 6px;
 
-    color: var(--color-accent);
+    color: var(--color-accent-accessible);
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -133,7 +135,7 @@ body {
 }
 
 .contact-button:hover {
-    background: var(--color-accent);
+    background: var(--color-accent-accessible);
     color: var(--color-white);
 }
 
@@ -419,7 +421,7 @@ body {
     justify-content: center;
     gap: 10px;
 
-    background: var(--color-accent);
+    background: var(--color-accent-accessible);
     color: var(--color-white);
 }
 
@@ -828,7 +830,7 @@ body {
 
     gap: 8px;
 
-    color: var(--color-accent);
+    color: var(--color-accent-accessible);
 
     font-size: 14px;
     font-weight: 700;
@@ -1010,7 +1012,7 @@ body {
 }
 
 .project-category {
-    color: var(--color-accent);
+    color: var(--color-accent-accessible);
 
     font-size: 20px;
     font-weight: 600;
@@ -1096,7 +1098,7 @@ body {
 
     padding: 14px 22px;
 
-    background: var(--color-accent);
+    background: var(--color-accent-accessible);
     color: var(--color-white);
 
     border-radius: 8px;
@@ -1398,7 +1400,7 @@ body {
 
     gap: 9px;
 
-    color: var(--color-accent);
+    color: var(--color-accent-accessible);
 
     font-size: 15px;
     font-weight: 700;
@@ -2179,11 +2181,11 @@ body {
 @media (hover: hover) and (pointer: fine) {
     .footer-nav-list a:hover,
     .footer-contact-link[href]:hover .footer-contact-title {
-        color: var(--color-accent);
+        color: color-mix(in srgb, var(--color-accent) 65%, var(--color-white));
     }
 
     .footer-back-to-top:hover {
-        background: var(--color-accent);
+        background: var(--color-accent-accessible);
         transform: translateY(-2px);
         box-shadow: 0 10px 24px var(--color-light-shadow);
     }
@@ -2453,7 +2455,7 @@ body {
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: var(--color-border);
+        background: var(--color-indicator-inactive);
         transition: background-color 0.2s ease;
     }
 
@@ -2824,5 +2826,55 @@ body {
         width: 100%;
         max-width: 360px;
         min-height: 48px;
+    }
+}
+/* Ajuste pontual: o ícone e o título não disputam espaço com a numeração. */
+@media (max-width: 360px) {
+    .solutions .solution-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+}
+
+/* Na grade de tablet, mantém a numeração acima da linha dos títulos. */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .solutions .solution-number {
+        top: 12px;
+    }
+}
+
+/* Mantém as formas estáticas, mas evita animações e movimentos de interação. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .language-menu,
+    .nav {
+        transform: none;
+    }
+
+    .button-primary:hover,
+    .button-primary:hover .button-icon,
+    .button-secondary:hover,
+    .solution-card:hover,
+    .solution-link:hover .solution-arrow,
+    .project-button:hover,
+    .project-button:hover img,
+    .project-card:hover,
+    .project-card:hover .project-card-image,
+    .project-card-link:hover img,
+    .technology-item:hover img,
+    .contact-card[href]:hover,
+    .contact-cta-button:hover,
+    .contact-cta-button:hover img,
+    .footer-back-to-top:hover,
+    .footer-back-to-top:hover svg {
+        transform: none;
     }
 }

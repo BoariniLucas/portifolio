@@ -3,6 +3,7 @@ const translations = {
     pt: {
         // Header
         "nav.home": "Início",
+        "nav.menu": "Menu de navegação",
         "nav.solutions": "Soluções",
         "nav.projects": "Projetos",
         "nav.about": "Sobre",
@@ -147,6 +148,7 @@ const translations = {
     en: {
         // Header
         "nav.home": "Home",
+        "nav.menu": "Navigation menu",
         "nav.solutions": "Solutions",
         "nav.projects": "Projects",
         "nav.about": "About",
@@ -315,6 +317,10 @@ function changeLanguage(language) {
         element.alt = translations[language][element.dataset.i18nAlt];
     });
 
+    document.querySelectorAll("[data-i18n-aria-label]").forEach(element => {
+        element.setAttribute("aria-label", translations[language][element.dataset.i18nAriaLabel]);
+    });
+
     if (typeof updateContactLinks === "function") {
         updateContactLinks(language);
     }
@@ -330,9 +336,21 @@ const languageFlag = document.querySelector("#language-flag");
 const languageLabel = document.querySelector("#language-label");
 
 
-// Abre e fecha o dropdown
+function setLanguageMenuOpen(open, returnFocus = false) {
+    languageMenu.classList.toggle("open", open);
+    languageButton.setAttribute("aria-expanded", String(open));
+    if (returnFocus) languageButton.focus({ preventScroll: true });
+}
+
+// O foco permanece no botão ao abrir; Tab acessa as opções seguintes.
 languageButton.addEventListener("click", () => {
-    languageMenu.classList.toggle("open");
+    setLanguageMenuOpen(!languageMenu.classList.contains("open"));
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key !== "Escape" || !languageMenu.classList.contains("open")) return;
+    event.preventDefault();
+    setLanguageMenuOpen(false, true);
 });
 
 // Fecha o dropdown ao clicar fora
@@ -343,7 +361,7 @@ document.addEventListener("click", (event) => {
         !languageMenu.contains(event.target);
 
     if (clickedOutside) {
-        languageMenu.classList.remove("open");
+        setLanguageMenuOpen(false);
     }
 
 });
@@ -368,7 +386,7 @@ document.querySelectorAll("[data-lang]").forEach(button => {
             languageLabel.textContent = "EN";
         }
 
-        languageMenu.classList.remove("open");
+        setLanguageMenuOpen(false, true);
 
     });
 

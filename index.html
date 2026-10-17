@@ -18,7 +18,7 @@
                 <img src="assets/img/logo-site/logo.png" alt="Lucas Boarini Digital Solutions">
             </a>
 
-            <nav class="nav">
+            <nav class="nav" id="main-navigation">
                 <a href="#home" class="active" data-i18n="nav.home">Início</a>
                 <a href="#solutions" data-i18n="nav.solutions">Soluções</a>
                 <a href="#projects" data-i18n="nav.projects">Projetos</a>
@@ -28,14 +28,14 @@
 
             <div class="language-selector">
 
-                <button class="language-button" id="language-button">
+                <button class="language-button" id="language-button" type="button" aria-expanded="false" aria-controls="language-menu">
                     <img
                         id="language-flag"
                         src="assets/img/flags/br.svg"
                         alt="Português"
                     >
                     <span id="language-label">PT</span>
-                    <img src="assets/img/icons/arrow-drop-down.svg">
+                    <img src="assets/img/icons/arrow-drop-down.svg" alt="">
                 </button>
 
                 <div class="language-menu" id="language-menu">
@@ -58,7 +58,7 @@
                 Vamos conversar
             </a>
 
-            <button class="menu-toggle" aria-label="Abrir menu">
+            <button class="menu-toggle" type="button" aria-label="Menu de navegação" data-i18n-aria-label="nav.menu" aria-expanded="false" aria-controls="main-navigation">
                 <span></span>
                 <span></span>
                 <span></span>
