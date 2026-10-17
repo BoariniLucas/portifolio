@@ -1,6 +1,12 @@
 const translations = {
 
     pt: {
+        // SEO e compartilhamento
+        "seo.title": "Lucas Boarini | Websites, Automação e Dashboards",
+        "seo.description": "Criação de websites, automações e dashboards para pequenos negócios. Transforme processos manuais em soluções digitais eficientes. Dublin, Irlanda.",
+        "seo.locale": "pt_BR",
+        "seo.localeAlternate": "en_IE",
+
         // Header
         "nav.home": "Início",
         "nav.menu": "Menu de navegação",
@@ -153,6 +159,12 @@ const translations = {
     },
 
     en: {
+        // SEO e compartilhamento
+        "seo.title": "Lucas Boarini | Websites, Automation & Dashboards",
+        "seo.description": "Websites, automation and dashboards for small businesses. Turn manual processes into efficient digital solutions. Based in Dublin, Ireland.",
+        "seo.locale": "en_IE",
+        "seo.localeAlternate": "pt_BR",
+
         // Header
         "nav.home": "Home",
         "nav.menu": "Navigation menu",
@@ -327,8 +339,8 @@ function changeLanguage(language) {
 
     });
 
-    // Atributos descritivos e acessíveis usam o mesmo dicionário dos textos.
-    ["alt", "aria-label", "title"].forEach(attribute => {
+    // Atributos descritivos, acessíveis e metadados usam o mesmo dicionário dos textos.
+    ["alt", "aria-label", "title", "content"].forEach(attribute => {
         const binding = `data-i18n-${attribute}`;
         document.querySelectorAll(`[${binding}]`).forEach(element => {
             const key = element.getAttribute(binding);
