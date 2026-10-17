@@ -12,10 +12,26 @@ function setNavigationOpen(open, returnFocus = false) {
     if (returnFocus) menuToggle.focus({ preventScroll: true });
 }
 
+// A âncora selecionada sincroniza também CTAs, footer e histórico do navegador.
+function updateActiveNavigation() {
+    const anchor = window.location.hash || "#home";
+    navLinks.forEach(link => {
+        const active = link.getAttribute("href") === anchor;
+        link.classList.toggle("active", active);
+        if (active) {
+            link.setAttribute("aria-current", "location");
+        } else {
+            link.removeAttribute("aria-current");
+        }
+    });
+}
+
+window.addEventListener("hashchange", updateActiveNavigation);
+window.addEventListener("pageshow", updateActiveNavigation);
+updateActiveNavigation();
+
 navLinks.forEach(link => {
     link.addEventListener("click", function () {
-        navLinks.forEach(item => item.classList.remove("active"));
-        this.classList.add("active");
         const wasOpen = nav.classList.contains("open");
         setNavigationOpen(false);
 

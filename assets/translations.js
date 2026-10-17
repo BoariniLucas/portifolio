@@ -26,10 +26,11 @@ const translations = {
         "hero.contact": "Vamos conversar",
 
         "hero.cardTitle": "Feito sob medida",
-        "hero.cardDescription": "Soluções pensadas para o seu negócio",
+        "hero.cardDescriptionStart": "Soluções pensadas",
+        "hero.cardDescriptionEnd": "para o seu negócio",
 
         //Solutions
-        solutionsLabel: "COMO POSSO APOIAR",
+        solutionsLabel: "Como posso apoiar",
         solutionsGoToWeb: "Ver solução: Sites profissionais",
         solutionsGoToDashboard: "Ver solução: Dashboards & Gestão",
         solutionsGoToAutomation: "Ver solução: Automações",
@@ -39,7 +40,7 @@ const translations = {
         solutionsTitleHighlight: "seu negócio mais eficiente.",
 
         solutionsDescription:
-            "Tecnologia prática para pequenos negócios que querem economizar tempo, organizar processos e trabalhar de forma mais eficiente.",
+            "Da presença online à organização dos processos, desenvolvo soluções simples e sob medida para as necessidades do seu negócio.",
 
         solutionWebTitle: "Sites profissionais",
 
@@ -69,6 +70,8 @@ const translations = {
 
         financeFeatured: "PROJETO EM DESTAQUE",
         financeTitle: "Controle Financeiro",
+        financeDashboardAlt: "Dashboard do Controle Financeiro",
+        financeMobileAlt: "Lançamento mobile do Controle Financeiro",
         financeCategory: "Dashboard & Automação",
 
         financeDescription:
@@ -88,6 +91,7 @@ const translations = {
         
         websiteCategory: "WEBSITE",
         websiteTitle: "Website profissional",
+        websiteImageAlt: "Website desenvolvido",
 
         websiteDescription:
             "Website responsivo desenvolvido para apresentar serviços de forma profissional e facilitar o contato entre o negócio e seus clientes.",
@@ -171,7 +175,8 @@ const translations = {
         "hero.contact": "Let's talk",
 
         "hero.cardTitle": "Tailored solutions",
-        "hero.cardDescription": "Designed around your business",
+        "hero.cardDescriptionStart": "Designed around",
+        "hero.cardDescriptionEnd": "your business",
 
         //Solutions
         solutionsLabel: "HOW I CAN HELP",
@@ -184,7 +189,7 @@ const translations = {
         solutionsTitleHighlight: "your business",
 
         solutionsDescription:
-            "Practical technology for small businesses looking to save time, streamline processes and work more efficiently.",
+            "From your online presence to streamlining workflows, I build simple, tailored solutions for your business.",
 
         solutionWebTitle: "Professional Websites",
 
@@ -214,6 +219,8 @@ const translations = {
 
         financeFeatured: "FEATURED PROJECT",
         financeTitle: "Financial Management",
+        financeDashboardAlt: "Financial Management dashboard",
+        financeMobileAlt: "Mobile entry screen for Financial Management",
         financeCategory: "Dashboard & Automation",
 
         financeDescription:
@@ -233,6 +240,7 @@ const translations = {
         
         websiteCategory: "WEBSITE",
         websiteTitle: "Professional Website",
+        websiteImageAlt: "Preview of the professional website",
 
         websiteDescription:
             "A responsive website designed to showcase services professionally and make it easier for businesses to connect with their customers.",
@@ -313,12 +321,13 @@ function changeLanguage(language) {
 
     });
 
-    document.querySelectorAll("[data-i18n-alt]").forEach(element => {
-        element.alt = translations[language][element.dataset.i18nAlt];
-    });
-
-    document.querySelectorAll("[data-i18n-aria-label]").forEach(element => {
-        element.setAttribute("aria-label", translations[language][element.dataset.i18nAriaLabel]);
+    // Atributos descritivos e acessíveis usam o mesmo dicionário dos textos.
+    ["alt", "aria-label", "title"].forEach(attribute => {
+        const binding = `data-i18n-${attribute}`;
+        document.querySelectorAll(`[${binding}]`).forEach(element => {
+            const key = element.getAttribute(binding);
+            element.setAttribute(attribute, translations[language][key]);
+        });
     });
 
     if (typeof updateContactLinks === "function") {
