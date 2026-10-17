@@ -739,9 +739,9 @@
                         <p data-i18n="technologiesDescription">Ferramentas que utilizo para transformar ideias em soluções digitais.</p>
                     </div>
 
-                    <div class="technologies-groups">
+                    <div class="technologies-groups mobile-carousel" data-mobile-carousel id="technologies-carousel" tabindex="0" aria-labelledby="technologies-title">
 
-                        <article class="technology-group technology-group--web" aria-labelledby="technology-web-title">
+                        <article class="technology-group technology-group--web" id="technology-web" aria-labelledby="technology-web-title">
                             <div class="technology-category">
                                 <span class="technology-category-icon" aria-hidden="true">
                                     <img src="assets/img/icons/technology-web.svg" alt="" width="32" height="32">
@@ -777,7 +777,7 @@
 
                         </article>
 
-                        <article class="technology-group technology-group--automation" aria-labelledby="technology-automation-title">
+                        <article class="technology-group technology-group--automation" id="technology-data" aria-labelledby="technology-automation-title">
 
                             <div class="technology-category">
                                 <span class="technology-category-icon" aria-hidden="true">
@@ -810,7 +810,7 @@
 
                         </article>
 
-                        <article class="technology-group technology-group--terminal" aria-labelledby="technology-terminal-title">
+                        <article class="technology-group technology-group--terminal" id="technology-development" aria-labelledby="technology-terminal-title">
 
                             <div class="technology-category">
                                 <span class="technology-category-icon" aria-hidden="true">
@@ -838,6 +838,17 @@
                             </ul>
 
                         </article>
+                    </div>
+                    <div class="carousel-indicators" data-carousel-controls="technologies-carousel" role="group" aria-labelledby="technologies-title">
+                        <button class="carousel-indicator" type="button" aria-controls="technology-web" aria-current="true">
+                            <span class="carousel-indicator-label" data-i18n="technologiesGoToWeb">Ver tecnologias: Desenvolvimento Web</span>
+                        </button>
+                        <button class="carousel-indicator" type="button" aria-controls="technology-data" aria-current="false">
+                            <span class="carousel-indicator-label" data-i18n="technologiesGoToData">Ver tecnologias: Automação &amp; Dados</span>
+                        </button>
+                        <button class="carousel-indicator" type="button" aria-controls="technology-development" aria-current="false">
+                            <span class="carousel-indicator-label" data-i18n="technologiesGoToDevelopment">Ver tecnologias: Ferramentas de Desenvolvimento</span>
+                        </button>
                     </div>
                 </div>
             </section>

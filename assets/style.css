@@ -2655,6 +2655,10 @@ body {
         gap: 16px;
     }
 
+    .technologies-groups.mobile-carousel > .technology-group {
+        align-content: start;
+    }
+
     .technology-group {
         grid-template-columns: 1fr;
         gap: 16px;

@@ -114,6 +114,9 @@ const translations = {
 
         // Technologies
         technologiesLabel: "TECNOLOGIAS & FERRAMENTAS",
+        technologiesGoToWeb: "Ver tecnologias: Desenvolvimento Web",
+        technologiesGoToData: "Ver tecnologias: Automação & Dados",
+        technologiesGoToDevelopment: "Ver tecnologias: Ferramentas de Desenvolvimento",
         technologiesTitle: "Tecnologias & Ferramentas",
         technologiesDescription: "Ferramentas que utilizo para transformar ideias em soluções digitais.",
         technologiesWebTitle: "Desenvolvimento Web",
@@ -263,6 +266,9 @@ const translations = {
 
         // Technologies
         technologiesLabel: "TECHNOLOGIES & TOOLS",
+        technologiesGoToWeb: "View technologies: Web Development",
+        technologiesGoToData: "View technologies: Automation & Data",
+        technologiesGoToDevelopment: "View technologies: Development Tools",
         technologiesTitle: "Technologies & Tools",
         technologiesDescription: "Tools I use to turn ideas into digital solutions.",
         technologiesWebTitle: "Web Development",
