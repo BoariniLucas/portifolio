@@ -7,6 +7,9 @@
         <title data-i18n="seo.title">Lucas Boarini | Websites, Automação e Dashboards</title>
         <meta name="description" content="Criação de websites, automações e dashboards para pequenos negócios. Transforme processos manuais em soluções digitais eficientes. Dublin, Irlanda." data-i18n-content="seo.description">
 
+        <link rel="canonical" href="https://boarinilucas.com/">
+
+        <meta property="og:url" content="https://boarinilucas.com/">
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="Lucas Boarini Digital Solutions">
         <meta property="og:title" content="Lucas Boarini | Websites, Automação e Dashboards" data-i18n-content="seo.title">
@@ -18,8 +21,8 @@
         <meta name="twitter:title" content="Lucas Boarini | Websites, Automação e Dashboards" data-i18n-content="seo.title">
         <meta name="twitter:description" content="Criação de websites, automações e dashboards para pequenos negócios. Transforme processos manuais em soluções digitais eficientes. Dublin, Irlanda." data-i18n-content="seo.description">
 
-        <!-- Antes da publicação: definir canonical e og:url com a URL pública definitiva.
-             Criar uma imagem de compartilhamento dedicada (1200 × 630), configurar
+        <!-- Domínio definitivo: https://boarinilucas.com/ (canonical e og:url configurados).
+             Antes da publicação: criar uma imagem de compartilhamento dedicada (1200 × 630), configurar
              og:image e twitter:image com URLs HTTPS absolutas e então utilizar
              twitter:card="summary_large_image". Não usar caminhos relativos. -->
 
@@ -144,7 +147,9 @@
                         </div>
 
                         <img
-                            src="assets/img/profile/foto-lucas.png"
+                            src="assets/img/profile/photo-lucas.webp"
+                            srcset="assets/img/profile/photo-lucas-small.webp 560w, assets/img/profile/photo-lucas.webp 1040w"
+                            sizes="(max-width: 768px) min(280px, calc(80vw - 32px)), min(520px, calc(50vw - 62px))"
                             alt="Lucas Boarini"
                             class="hero-image"
                         >
@@ -737,7 +742,7 @@
 
                         <div class="about-photo">
                             <img
-                                src="assets/img/profile/about.png"
+                                src="assets/img/profile/about.webp"
                                 alt="Lucas Boarini"
                             >
                         </div>
@@ -914,7 +919,16 @@
                             </div>
                         </div>
                         <div class="contact-visual">
-                            <img src="assets/img/contact/workspace.png" alt="Ambiente de trabalho com notebook, caderno e uma caneca sobre a mesa." data-i18n-alt="contactImageAlt" width="1672" height="941" loading="lazy">
+                            <img
+                                src="assets/img/contact/workspace.webp"
+                                srcset="assets/img/contact/workspace-small.webp 800w, assets/img/contact/workspace.webp 1448w"
+                                sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1344px) calc(55vw - 55px), 685px"
+                                alt="Ambiente de trabalho com notebook, caderno e uma caneca sobre a mesa."
+                                data-i18n-alt="contactImageAlt"
+                                width="1448"
+                                height="1086"
+                                loading="lazy"
+                            >
                         </div>
                     </div>
 
