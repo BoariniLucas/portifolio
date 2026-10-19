@@ -146,6 +146,7 @@ body {
 
     width: 44px;
     height: 44px;
+    flex-shrink: 0;
 
     padding: 0;
     background: none;
@@ -2882,5 +2883,42 @@ body {
     .footer-back-to-top:hover,
     .footer-back-to-top:hover svg {
         transform: none;
+    }
+}
+
+/* Tablet: botões do Hero legíveis e último card de Soluções centralizado. */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons > a {
+        min-height: 56px;
+        text-align: center;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .solutions-grid > .solution-card {
+        grid-column: span 2;
+        min-width: 0;
+    }
+
+    .solutions-grid > .solution-card:last-child {
+        grid-column: 2 / span 2;
+    }
+}
+
+/* Reserva a área do botão sem reduzir o logotipo em telas estreitas. */
+@media (max-width: 360px) {
+    .header-container {
+        padding-inline: 12px;
+    }
+
+    .language-button > img:last-child {
+        display: none;
     }
 }

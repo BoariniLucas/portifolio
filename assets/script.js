@@ -10,11 +10,21 @@ function setNavigationOpen(open, returnFocus = false) {
     menuToggle.setAttribute("aria-expanded", String(open));
 
     if (returnFocus) menuToggle.focus({ preventScroll: true });
+    if (open) {
+        // Aguarda a visibilidade do menu antes de mover o foco.
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            if (nav.classList.contains("open")) {
+                navLinks[0].focus({ preventScroll: true });
+            }
+        }));
+    }
 }
 
-// A âncora selecionada sincroniza também CTAs, footer e histórico do navegador.
-function updateActiveNavigation() {
-    const anchor = window.location.hash || "#home";
+// Observa uma faixa abaixo do header, sem reescrever a URL durante a rolagem.
+const navigationSections = Array.from(document.querySelectorAll("main section[id]"));
+let navigationObserver;
+
+function updateActiveNavigation(anchor) {
     navLinks.forEach(link => {
         const active = link.getAttribute("href") === anchor;
         link.classList.toggle("active", active);
@@ -26,9 +36,30 @@ function updateActiveNavigation() {
     });
 }
 
-window.addEventListener("hashchange", updateActiveNavigation);
-window.addEventListener("pageshow", updateActiveNavigation);
-updateActiveNavigation();
+function updateVisibleNavigation() {
+    const activationLine = document.querySelector(".header").offsetHeight + 24;
+    const section = navigationSections.slice().reverse().find(section =>
+        section.getBoundingClientRect().top <= activationLine
+    ) || navigationSections[0];
+    if (section) updateActiveNavigation(`#${section.id}`);
+}
+
+function observeNavigationSections() {
+    if (navigationObserver) navigationObserver.disconnect();
+    const activationLine = document.querySelector(".header").offsetHeight + 24;
+    navigationObserver = new IntersectionObserver(updateVisibleNavigation, {
+        rootMargin: `-${activationLine}px 0px -${Math.max(0, window.innerHeight - activationLine - 1)}px 0px`,
+        threshold: 0
+    });
+    navigationSections.forEach(section => navigationObserver.observe(section));
+    updateVisibleNavigation();
+}
+
+window.addEventListener("hashchange", () => requestAnimationFrame(updateVisibleNavigation));
+window.addEventListener("pageshow", observeNavigationSections);
+window.addEventListener("resize", observeNavigationSections);
+updateActiveNavigation(window.location.hash || "#home");
+observeNavigationSections();
 
 navLinks.forEach(link => {
     link.addEventListener("click", function () {
@@ -48,7 +79,6 @@ navLinks.forEach(link => {
 menuToggle.addEventListener("click", () => {
     const open = !nav.classList.contains("open");
     setNavigationOpen(open);
-    if (open) navLinks[0].focus({ preventScroll: true });
 });
 
 document.addEventListener("keydown", event => {
