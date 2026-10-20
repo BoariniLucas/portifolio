@@ -98,10 +98,10 @@ compactNavigation.addEventListener("change", event => {
     }
 });
 
-// CONTACT CONFIGURATION — Lucas: preencha estes dois campos para ativar os links.
+// Configuração central dos canais de contato.
 const contactConfig = {
-    whatsappNumber: "", // PREENCHER: número com código do país, somente dígitos.
-    email: "" // PREENCHER: endereço de e-mail profissional.
+    whatsappNumber: "", // Código do país e número, somente dígitos.
+    email: "contact@boarinilucas.com"
 };
 
 function updateContactLinks(language) {
@@ -122,10 +122,19 @@ function updateContactLinks(language) {
 
         if (href) {
             link.href = href;
+            if (link.dataset.contact === "whatsapp") {
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+            } else {
+                link.removeAttribute("target");
+                link.removeAttribute("rel");
+            }
             link.removeAttribute("aria-disabled");
             link.removeAttribute("tabindex");
         } else {
             link.removeAttribute("href");
+            link.removeAttribute("target");
+            link.removeAttribute("rel");
             link.setAttribute("aria-disabled", "true");
             link.setAttribute("tabindex", "-1");
         }
