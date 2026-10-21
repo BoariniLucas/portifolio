@@ -310,6 +310,7 @@ body {
 ========================= */
 
 .hero {
+    scroll-margin-top: 100px;
     min-height: calc(100vh - 90px);
     display: flex;
     align-items: center;
@@ -2133,6 +2134,7 @@ body {
 
 .footer-bottom {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
@@ -2921,4 +2923,20 @@ body {
     .language-button > img:last-child {
         display: none;
     }
+}
+
+/* Acesso às informações de privacidade nos rodapés. */
+.footer-privacy-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-white);
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer .footer-privacy-link:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 5px;
 }
