@@ -201,7 +201,7 @@ const translations = {
         contactSubtitle: "Tem um projeto em mente?",
         contactDescription: "Se você precisa de um website, quer automatizar processos ou organizar melhor as informações do seu negócio, vamos conversar sobre como posso ajudar.",
         contactWhatsApp: "WhatsApp",
-        contactWhatsAppDescription: "Temporariamente indisponível.",
+        contactWhatsAppDescription: "Converse diretamente comigo.",
         contactEmail: "E-mail",
         contactEmailDescription: "Envie sua mensagem.",
         contactLocation: "Dublin, Irlanda",
@@ -210,7 +210,7 @@ const translations = {
         contactCtaTitle: "Prefere conversar primeiro sobre sua ideia?",
         contactCtaDescription: "Me conte um pouco do que você precisa. Será um prazer entender seu projeto.",
         contactCtaButton: "Vamos conversar",
-        contactWhatsAppMessage: "Olá, Lucas! Encontrei seu portfólio e gostaria de conversar sobre um projeto.",
+        contactWhatsAppMessage: "Olá! Visitei seu portfólio e gostaria de conversar sobre um projeto.",
 
         // Footer
         footerDescription: "Desenvolvendo soluções digitais para pequenos negócios que querem crescer de forma simples e eficiente.",
@@ -420,7 +420,7 @@ const translations = {
         contactSubtitle: "Have a project in mind?",
         contactDescription: "Whether you need a website, want to automate processes or organise your business information, let’s talk about how I can help.",
         contactWhatsApp: "WhatsApp",
-        contactWhatsAppDescription: "Temporarily unavailable.",
+        contactWhatsAppDescription: "Get in touch directly.",
         contactEmail: "Email",
         contactEmailDescription: "Send me a message.",
         contactLocation: "Dublin, Ireland",
@@ -429,7 +429,7 @@ const translations = {
         contactCtaTitle: "Would you like to talk through your idea first?",
         contactCtaDescription: "Tell me a little about what you need. I’d be happy to learn more about your project.",
         contactCtaButton: "Let’s talk",
-        contactWhatsAppMessage: "Hi Lucas! I found your portfolio and would like to discuss a project.",
+        contactWhatsAppMessage: "Hello! I visited your portfolio and would like to discuss a project.",
 
         // Footer
         footerDescription: "Building digital solutions for small businesses that want to grow simply and efficiently.",

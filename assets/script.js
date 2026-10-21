@@ -111,7 +111,7 @@ if (document.querySelector(".nav") && document.querySelector(".menu-toggle")) {
 
 // Configuração central dos canais de contato.
 const contactConfig = {
-    whatsappNumber: "", // Código do país e número, somente dígitos.
+    whatsappNumber: "353838987893", // Código do país e número, somente dígitos.
     email: "contact@boarinilucas.com"
 };
 

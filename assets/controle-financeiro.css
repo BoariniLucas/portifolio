@@ -38,8 +38,7 @@
     display: none;
 }
 
-.finance-case .case-back-link svg,
-.finance-case .case-return-button svg {
+.finance-case .case-back-link svg {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
@@ -414,19 +413,14 @@
 }
 
 .finance-case .case-actions {
-    padding: 14px 0 76px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 0 76px;
     text-align: center;
 }
 
-.finance-case .case-return-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: auto;
-    min-height: 48px;
-    max-width: 100%;
-}
 
 .finance-case .case-footer {
     padding: 28px 32px;
