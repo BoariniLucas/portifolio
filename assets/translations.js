@@ -1,6 +1,69 @@
+const languageAssetsUrl = new URL("img/flags/", document.currentScript.src);
+
 const translations = {
 
     pt: {
+        // Controles do carrossel de seções.
+        "case.chaptersLabel": "Seções do estudo de caso",
+        "case.previousSection": "Seção anterior",
+        "case.nextSection": "Próxima seção",
+        "case.goToSection": "Ir para a seção",
+        "case.currentSection": "Seção atual",
+
+        // Estudo de caso — Controle Financeiro
+        "case.seoTitle": "Controle Financeiro | Estudo de caso — Lucas Boarini",
+        "case.seoDescription": "Conheça o Controle Financeiro: dashboard e interface de lançamentos com Google Sheets e Apps Script, apresentados neste estudo de caso de Lucas Boarini.",
+        "case.back": "Voltar aos projetos",
+        "case.backShort": "Projetos",
+        "case.skip": "Ir para o conteúdo",
+        "case.title": "Controle Financeiro",
+        "case.intro": "Dashboard e interface de lançamentos para centralizar informações financeiras, acompanhar saldos, investimentos e indicadores em uma visão clara e organizada.",
+        "case.problemLabel": "O problema",
+        "case.problemTitle": "Dificuldade em acompanhar todas as informações",
+        "case.problemText": "Informações distribuídas entre contas, moedas e registros manuais dificultam uma visão clara das finanças. O desafio do projeto foi reunir esses dados e organizar o acompanhamento de gastos, investimentos e patrimônio.",
+        "case.problem1": "Informações financeiras em registros separados",
+        "case.problem2": "Lançamentos manuais e repetitivos",
+        "case.problem3": "Visão fragmentada do patrimônio",
+        "case.problem4": "Dificuldade para identificar padrões de gastos",
+        "case.solutionLabel": "A solução",
+        "case.solutionTitle": "Um sistema centralizado e automatizado",
+        "case.solutionText": "Desenvolvi um dashboard integrado ao Google Sheets por meio do Apps Script, com uma interface web para organizar lançamentos e visualizar informações financeiras em um só lugar.",
+        "case.solution1": "Informações reunidas em um único painel",
+        "case.solution2": "Interface prática para registrar movimentações",
+        "case.solution3": "Gráficos e indicadores para acompanhar as finanças",
+        "case.solution4": "Visão de saldos, patrimônio e investimentos",
+        "case.featuresLabel": "Funcionalidades",
+        "case.featuresTitle": "Principais recursos do projeto",
+        "case.feature1Title": "Dashboard completo",
+        "case.feature1Text": "Visão geral de saldos, receitas, despesas, investimentos e patrimônio.",
+        "case.feature2Title": "Lançamentos rápidos",
+        "case.feature2Text": "Interface para registrar movimentações financeiras de forma organizada.",
+        "case.feature3Title": "Categorização",
+        "case.feature3Text": "Organização dos lançamentos por categorias e subcategorias.",
+        "case.feature4Title": "Investimentos",
+        "case.feature4Text": "Acompanhamento dos investimentos e dos valores consolidados.",
+        "case.feature5Title": "Indicadores",
+        "case.feature5Text": "Gráficos e métricas para apoiar a análise financeira.",
+        "case.technologiesLabel": "Tecnologias",
+        "case.technologiesTitle": "Ferramentas utilizadas",
+        "case.sheetsText": "Organização e armazenamento dos dados.",
+        "case.appsText": "Integração entre planilha e interface, com automações.",
+        "case.htmlText": "Estrutura das interfaces.",
+        "case.cssText": "Estilização e responsividade.",
+        "case.jsText": "Interações e lógica da aplicação.",
+        "case.chartText": "Gráficos e visualização de dados.",
+        "case.visualLabel": "Demonstração visual",
+        "case.visualTitle": "Interface do sistema",
+        "case.desktopCaption": "Dashboard principal (Desktop)",
+        "case.mobileCaption": "Interface de lançamento (Mobile)",
+        "case.desktopAlt": "Dashboard do Controle Financeiro com saldos, investimentos, patrimônio e gráficos de receitas e despesas, utilizando dados fictícios.",
+        "case.mobileAlt": "Interface mobile de lançamento com campos de moeda, valor, banco, operação, subcategoria, descrição e tipo de conta.",
+        "case.openDesktop": "Abrir imagem do dashboard em tamanho original, em nova aba",
+        "case.openMobile": "Abrir imagem da interface mobile em tamanho original, em nova aba",
+        "case.visualNote": "Screenshots com dados fictícios. Selecione uma imagem para vê-la em tamanho original.",
+        "case.footer": "Estudo de caso de um projeto pessoal.",
+
+
         // SEO e compartilhamento
         "seo.title": "Lucas Boarini | Websites, Automação e Dashboards",
         "seo.description": "Criação de websites, automações e dashboards para pequenos negócios. Transforme processos manuais em soluções digitais eficientes. Dublin, Irlanda.",
@@ -159,6 +222,67 @@ const translations = {
     },
 
     en: {
+        // Controles do carrossel de seções.
+        "case.chaptersLabel": "Case study sections",
+        "case.previousSection": "Previous section",
+        "case.nextSection": "Next section",
+        "case.goToSection": "Go to section",
+        "case.currentSection": "Current section",
+
+        // Estudo de caso — Controle Financeiro
+        "case.seoTitle": "Financial Management | Case Study — Lucas Boarini",
+        "case.seoDescription": "Explore Financial Management: a dashboard and transaction-entry interface built with Google Sheets and Apps Script, in this case study by Lucas Boarini.",
+        "case.back": "Back to projects",
+        "case.backShort": "Projects",
+        "case.skip": "Skip to content",
+        "case.title": "Financial Management",
+        "case.intro": "A dashboard and transaction-entry interface that brings financial information together, with a clear overview of balances, investments and key indicators.",
+        "case.problemLabel": "The problem",
+        "case.problemTitle": "Keeping track of scattered financial information",
+        "case.problemText": "Information spread across accounts, currencies and manual records makes finances harder to understand. The project focused on bringing that data together and organising the overview of spending, investments and net worth.",
+        "case.problem1": "Financial information stored in separate records",
+        "case.problem2": "Repetitive manual transaction entry",
+        "case.problem3": "A fragmented view of net worth",
+        "case.problem4": "Difficulty identifying spending patterns",
+        "case.solutionLabel": "The solution",
+        "case.solutionTitle": "A centralised, automated system",
+        "case.solutionText": "I developed a dashboard connected to Google Sheets through Apps Script, with a web interface for organising transaction entry and viewing financial information in one place.",
+        "case.solution1": "Financial information brought together in one dashboard",
+        "case.solution2": "A practical interface for recording transactions",
+        "case.solution3": "Charts and indicators for tracking finances",
+        "case.solution4": "An overview of balances, net worth and investments",
+        "case.featuresLabel": "Features",
+        "case.featuresTitle": "Key project features",
+        "case.feature1Title": "Financial dashboard",
+        "case.feature1Text": "An overview of balances, income, expenses, investments and net worth.",
+        "case.feature2Title": "Quick transaction entry",
+        "case.feature2Text": "An interface for recording financial transactions in an organised way.",
+        "case.feature3Title": "Categorisation",
+        "case.feature3Text": "Transactions organised by categories and subcategories.",
+        "case.feature4Title": "Investments",
+        "case.feature4Text": "An overview of investments and consolidated values.",
+        "case.feature5Title": "Indicators",
+        "case.feature5Text": "Charts and metrics to support financial analysis.",
+        "case.technologiesLabel": "Technologies",
+        "case.technologiesTitle": "Tools used",
+        "case.sheetsText": "Data organisation and storage.",
+        "case.appsText": "Integration and automation between the spreadsheet and interface.",
+        "case.htmlText": "Interface structure.",
+        "case.cssText": "Styling and responsive layouts.",
+        "case.jsText": "Application logic and interactions.",
+        "case.chartText": "Charts and data visualisation.",
+        "case.visualLabel": "Visual walkthrough",
+        "case.visualTitle": "The system interface",
+        "case.desktopCaption": "Main dashboard (Desktop)",
+        "case.mobileCaption": "Transaction-entry interface (Mobile)",
+        "case.desktopAlt": "Financial Management dashboard showing balances, investments, net worth, and income and expense charts with fictional data.",
+        "case.mobileAlt": "Mobile transaction-entry interface with fields for currency, amount, bank, transaction type, subcategory, description and account type.",
+        "case.openDesktop": "Open the full-size dashboard image in a new tab",
+        "case.openMobile": "Open the full-size mobile interface image in a new tab",
+        "case.visualNote": "Screenshots show the Portuguese interface with fictional data. Select an image to view it at full size.",
+        "case.footer": "A case study of a personal project.",
+
+
         // SEO e compartilhamento
         "seo.title": "Lucas Boarini | Websites, Automation & Dashboards",
         "seo.description": "Websites, automation and dashboards for small businesses. Turn manual processes into efficient digital solutions. Based in Dublin, Ireland.",
@@ -319,6 +443,7 @@ const translations = {
 };
 
 function changeLanguage(language) {
+    if (language !== "pt" && language !== "en") return;
 
     document.querySelectorAll("[data-i18n]").forEach(element => {
 
@@ -352,8 +477,27 @@ function changeLanguage(language) {
         updateContactLinks(language);
     }
 
-    document.documentElement.lang = 
+    document.documentElement.lang =
         language === "pt" ? "pt-BR" : "en-IE";
+
+    languageFlag.src = new URL(language === "pt" ? "br.svg" : "ie.svg", languageAssetsUrl).href;
+    languageFlag.alt = language === "pt" ? "Português" : "English";
+    languageLabel.textContent = language === "pt" ? "PT" : "EN";
+
+    // Apenas os links marcados transportam o idioma entre as duas páginas.
+    document.querySelectorAll("a[data-language-link]").forEach(link => {
+        const destination = new URL(link.href);
+        if (language === "en") destination.searchParams.set("lang", "en");
+        else destination.searchParams.delete("lang");
+        link.href = destination.href;
+    });
+
+    const pageUrl = new URL(window.location.href);
+    if (language === "en") pageUrl.searchParams.set("lang", "en");
+    else pageUrl.searchParams.delete("lang");
+    if (pageUrl.href !== window.location.href) {
+        window.history.replaceState(window.history.state, "", pageUrl.href);
+    }
 
 }
 
@@ -403,18 +547,17 @@ document.querySelectorAll("[data-lang]").forEach(button => {
 
         changeLanguage(language);
 
-        if (language === "pt") {
-            languageFlag.src = "assets/img/flags/br.svg";
-            languageFlag.alt = "Português";
-            languageLabel.textContent = "PT";
-        } else {
-            languageFlag.src = "assets/img/flags/ie.svg";
-            languageFlag.alt = "English";
-            languageLabel.textContent = "EN";
-        }
-
         setLanguageMenuOpen(false, true);
 
     });
 
 });
+// Uma URL sem idioma (ou com valor não suportado) começa em português.
+function restorePageLanguage() {
+    const language = new URLSearchParams(window.location.search).get("lang");
+    changeLanguage(language === "en" ? "en" : "pt");
+}
+
+restorePageLanguage();
+window.addEventListener("popstate", restorePageLanguage);
+window.addEventListener("pageshow", restorePageLanguage);
