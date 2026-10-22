@@ -2940,3 +2940,104 @@ body {
     outline: 2px solid var(--color-white);
     outline-offset: 5px;
 }
+
+/* Consentimento opcional de métricas — componente compartilhado. */
+.privacy-consent[hidden],
+.privacy-consent-status[hidden] {
+    display: none;
+}
+
+.privacy-consent {
+    position: fixed;
+    inset: auto 16px calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 999;
+    max-width: 980px;
+    max-height: calc(100dvh - 120px);
+    overflow-y: auto;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: var(--color-white);
+    color: var(--color-dark);
+    box-shadow: 0 8px 24px var(--color-light-shadow);
+    font-family: var(--font-primary);
+}
+
+.privacy-consent-copy {
+    min-width: 0;
+}
+
+.privacy-consent h2 {
+    margin: 0 0 8px;
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+.privacy-consent p {
+    margin: 0 0 8px;
+    font-size: .875rem;
+    line-height: 1.5;
+}
+
+.privacy-consent-policy {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-primary);
+    font-size: .875rem;
+    text-decoration: underline;
+}
+
+.privacy-consent-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.privacy-consent-choice {
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    background: var(--color-white);
+    color: var(--color-primary);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.privacy-consent-choice:hover {
+    background: var(--color-background);
+}
+
+.privacy-preferences {
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+.privacy-consent :focus-visible,
+.privacy-preferences:focus-visible {
+    outline: 2px solid var(--color-accent-accessible);
+    outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+    .privacy-consent {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .privacy-consent-actions > button {
+        flex: 1;
+        min-width: 0;
+    }
+}
