@@ -108,10 +108,36 @@
         };
     }
 
+    // Conteúdo inicial legível mesmo se o dicionário estiver lento ou indisponível.
+    // Inglês e alternância de idioma continuam exclusivamente em translations.js.
+    const fallbackText = {
+        "consent.title": "Sua privacidade importa",
+        "consent.text": "Utilizamos métricas opcionais para entender as visitas e melhorar este site. Você pode aceitar ou recusar e alterar sua escolha a qualquer momento.",
+        "consent.decline": "Recusar",
+        "consent.accept": "Aceitar",
+        "consent.preferences": "Preferências de privacidade",
+        "privacy.link": "Política de Privacidade",
+        "consent.storageError": "Não foi possível salvar a escolha solicitada. As métricas permanecem bloqueadas nesta página. Verifique o armazenamento do navegador antes de tentar novamente.",
+        "consent.revocationError": "As métricas foram bloqueadas nesta página, mas não foi possível salvar a recusa. Outras páginas ou recarregamentos podem reutilizar a autorização antiga. Limpe os dados deste site nas configurações do navegador antes de continuar a navegação."
+    };
+
+    function translateConsent() {
+        if (typeof changeLanguage !== "function") return;
+        try {
+            changeLanguage(document.documentElement.lang === "en-IE" ? "en" : "pt");
+        } catch (error) {
+            // A indisponibilidade da tradução não impede escolher ou revogar consentimento.
+            console.warn("Privacy consent: translation unavailable; keeping fallback text.", error);
+        }
+    }
+
     function element(tag, className, key) {
         const node = document.createElement(tag);
         if (className) node.className = className;
-        if (key) node.dataset.i18n = key;
+        if (key) {
+            node.dataset.i18n = key;
+            node.textContent = fallbackText[key] || "";
+        }
         return node;
     }
     const panel = element("section", "privacy-consent");
@@ -158,7 +184,8 @@
 
     function showStorageError(key) {
         status.dataset.i18n = key;
-        changeLanguage(document.documentElement.lang === "en-IE" ? "en" : "pt");
+        status.textContent = fallbackText[key];
+        translateConsent();
         status.hidden = false;
     }
 
@@ -216,7 +243,7 @@
         }
     });
 
-    changeLanguage(document.documentElement.lang === "en-IE" ? "en" : "pt");
+    translateConsent();
     consent = readPreference();
     showPanel(consent === null);
     if (allowed() && !initialized) {

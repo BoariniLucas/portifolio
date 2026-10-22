@@ -580,6 +580,9 @@ function changeLanguage(language) {
     document.querySelectorAll("[data-i18n]").forEach(element => {
 
         const key = element.getAttribute("data-i18n");
+        const translatedText = translations[language]?.[key];
+        // Uma versão incompleta do dicionário nunca apaga o conteúdo de fallback.
+        if (typeof translatedText !== "string" || !translatedText.trim()) return;
 
         if (element.hasAttribute("data-i18n-text")) {
             // Traduz o texto inicial sem substituir o destaque interno do título.
@@ -588,10 +591,10 @@ function changeLanguage(language) {
             );
 
             if (textNode) {
-                textNode.textContent = translations[language][key] + " ";
+                textNode.textContent = translatedText + " ";
             }
         } else {
-            element.textContent = translations[language][key];
+            element.textContent = translatedText;
         }
 
     });
@@ -601,7 +604,10 @@ function changeLanguage(language) {
         const binding = `data-i18n-${attribute}`;
         document.querySelectorAll(`[${binding}]`).forEach(element => {
             const key = element.getAttribute(binding);
-            element.setAttribute(attribute, translations[language][key]);
+            const translatedAttribute = translations[language]?.[key];
+            if (typeof translatedAttribute === "string") {
+                element.setAttribute(attribute, translatedAttribute);
+            }
         });
     });
 
